@@ -57,7 +57,7 @@ public class MortgageCalculator {
 //            double balance = calculator.calculateBalance(month);
         // Declare a new array length == # of payments
         double [] balances = new double[getNumberOfPayments()];
-        for (short month = 1; month <= years* getNumberOfPayments(); month++)
+        for (short month = 1; month <= balances.length; month++)
             balances[month - 1] = calculateBalance(month);
 
         return balances;
