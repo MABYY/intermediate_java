@@ -1,5 +1,7 @@
 package com.codewithmosh;
 
+import org.w3c.dom.Text;
+
 public class Main {
 
     public static void main(String[] arg) {
@@ -37,6 +39,51 @@ public class Main {
         textbox20.setText("HELLO WORDDD");
         System.out.println(textbox20);
         System.out.println(textbox20.toString());
+
+
+        // UPCASTING: casting an object to one of ita SUPER types
+        var control1 = new UIControl(true);
+        show(control1);
+
+        // If we pass a textbox object,
+        // this object is automatically casted to UIControl
+        var textBox21 = new TextBox();
+        show(textBox21);
+        // UPCASTING--> it inherits all the memners of the control object
+        // EVERY TEXTBOX object is a UI Control Object
+        // Everty Textbox is automatically casted to a UI Control
+        // Notice that nothing is printed
+        // This is because we have overriden the .toString()
+
+        }
+        public static void show(UIControl ctrl) {
+
+            // NOT EVERY UIControl object is a textBox object
+            // We need to make sure that the ctrl object passed
+            // is an instance of a TextBox object,
+            // so that we can cast it to a TB object
+
+            if (ctrl instanceof TextBox) {
+                var textBoxCast = (TextBox) ctrl;  // -->DOWNCASRTING  to subtype
+                textBoxCast.setText("UIControl object casted to Texbox object");
+                }
+
+            System.out.println(ctrl);
+            
+            // In order to be able to access the TextBox methods
+            // we need to specifically cast ctrl to TextBox
+            // We create a new variable and cast it to a Textbox boject
+            // so that we can have access to its methods
+
+//            var textBoxCast = (TextBox) ctrl;  // -->DOWNCASRTING  to subtype
+//            textBoxCast.setText("UIControl object casted to Texbox object");
+//            System.out.println(ctrl);
+
+
+
+
+
+
 
     }
 }
