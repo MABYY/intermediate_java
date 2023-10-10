@@ -69,7 +69,7 @@ public class Main {
                 }
 
             System.out.println(ctrl);
-            
+
             // In order to be able to access the TextBox methods
             // we need to specifically cast ctrl to TextBox
             // We create a new variable and cast it to a Textbox boject
@@ -79,11 +79,25 @@ public class Main {
 //            textBoxCast.setText("UIControl object casted to Texbox object");
 //            System.out.println(ctrl);
 
+            // Compare objects
+            // override the equals method to compare the actual values
+            // instead of the memory location
+
+            var point1 = new Point(1,2);
+            var point2 = new Point(1,2);
+            System.out.println(point1.equals(point2));
+
+            // Check hashCode method
+            System.out.println(point1.hashCode());
+            System.out.println(point2.hashCode());
 
 
 
+            // Polimorphism
 
+            // Create an array of control objects
 
+            UIControl[] controls = {new TextBox(), new CheckBox()};
 
     }
 }
